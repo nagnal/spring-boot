@@ -1,0 +1,16 @@
+package rules
+ 
+import com.perf.demo.model.Product
+
+rule "Offer for Diamond1"
+	when 
+		productObject: Product(type=="diamond1")
+	then
+		productObject.setDiscount(10);
+	end
+rule "Offer for Gold1"
+	when 
+		productObject: Product(type=="gold1")
+	then
+		productObject.setDiscount(15);
+	end

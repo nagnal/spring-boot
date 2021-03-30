@@ -1,0 +1,32 @@
+cxf:
+  path: /rest
+kieserver:
+  controllers: http://dev-url:8080/business-central/rest/controller
+  dmn:
+    enabled: true
+  drools:
+    enabled: true
+  location: http://localhost:8090/rest/server
+  serverId: business-application-service-dev
+  serverName: business-application-service Dev
+server:
+  address: localhost
+  port: 80
+spring:
+  banner:
+    location: classpath:banner.txt
+  datasource:
+    driver-class-name: org.h2.Driver
+    password: sa
+    url: jdbc:h2:./target/spring-boot-jbpm
+    username: sa
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        hbm2ddl:
+          auto: update
+        show_sql: false
